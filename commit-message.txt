@@ -1,8 +1,0 @@
-docs: add comprehensive project README for ReserveX Launch-1
-
-- Added detailed README.md describing project overview, features (MVP & future launches)
-- Documented complete tech stack (Next.js, Supabase, Tailwind, shadcn/ui, React Query, Zod)
-- Included setup instructions (clone, install dependencies, environment variables)
-- Added demo account credentials and seed data notes
-- Documented deployment details (Vercel + Supabase)
-- Added placeholder sections for screenshots and license
