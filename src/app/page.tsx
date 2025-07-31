@@ -2,11 +2,14 @@
 
 import { useState } from 'react'
 import { supabase } from '@/lib/supabaseClient'
+import { useRedirectOnRole } from '@/hooks/useRedirectOnRole';
+
 
 export default function Home() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState('')
+  useRedirectOnRole();
 
   const handleLogin = async () => {
     const { error } = await supabase.auth.signInWithPassword({ email, password })
