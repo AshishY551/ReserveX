@@ -30,6 +30,22 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        // Restore session on initial mount
+        supabase.auth.getSession().then(({ data: { session } }) => {
+        console.log("🔁 Restored session:", session);
+        console.log("🙋‍♂️ User:", session?.user);
+        setSession(session);
+        });
+
+
+        // Listen for auth state changes
+        const { data: listener } = supabase.auth.onAuthStateChange(
+        (_event, session) => {
+            console.log("🔄 Auth state changed:", _event);
+            setSession(session);
+        }
+        );
+
         // const getSession = async () => {
         //     const {
         //         data: { session },
