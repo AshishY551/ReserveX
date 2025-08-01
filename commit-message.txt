@@ -1,1 +1,18 @@
-Configure Supabase with environment variables and seed initial admin user
+feat(dashboard): fix dashboard modal/tab issues & improve UX
+
+- Resolved auto-redirect issue when switching tabs or reopening modals
+- Fixed improper import from `framer-motion`:
+  ⛔️ Removed: `import * as framer from 'framer-motion'`
+  ✅ Used: `import { motion } from 'framer-motion'`
+- Fixed issue caused by `export * from 'motion-dom'` in `index.mjs`:
+  ⛔️ Removed conflicting wildcard export to prevent runtime modal/tab crashes
+- Refactored Dashboard layout to:
+  - Keep state persistent on tab change
+  - Ensure correct modal mount/unmount logic
+- Updated modal visibility logic to avoid unwanted redirects
+- Improved framer motion integration with correct usage of `<motion.div>` and key transitions
+- Ensured no memory leaks or DOM errors during client-side navigation
+- Added fallback condition to prevent modal triggering unintended routes
+- Verified full responsiveness and cross-tab support
+
+🔒 Safe to merge | 🧪 Tested on Chrome, Edge, Firefox (desktop & mobile)
