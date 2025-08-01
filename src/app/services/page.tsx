@@ -46,7 +46,7 @@ export default function Services() {
           Our Services
         </motion.h1>
         <p className="mt-3 text-gray-500 text-lg">
-          We are working hard to bring you powerful tools. Here's a sneak peek!
+          We are working hard to bring you powerful tools. Here is a sneak peek!
         </p>
       </div>
 

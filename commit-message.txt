@@ -1,18 +1,9 @@
-feat(dashboard): fix dashboard modal/tab issues & improve UX
+feat(auth): enhance login UI with icons, accessibility, and styling
 
-- Resolved auto-redirect issue when switching tabs or reopening modals
-- Fixed improper import from `framer-motion`:
-  ⛔️ Removed: `import * as framer from 'framer-motion'`
-  ✅ Used: `import { motion } from 'framer-motion'`
-- Fixed issue caused by `export * from 'motion-dom'` in `index.mjs`:
-  ⛔️ Removed conflicting wildcard export to prevent runtime modal/tab crashes
-- Refactored Dashboard layout to:
-  - Keep state persistent on tab change
-  - Ensure correct modal mount/unmount logic
-- Updated modal visibility logic to avoid unwanted redirects
-- Improved framer motion integration with correct usage of `<motion.div>` and key transitions
-- Ensured no memory leaks or DOM errors during client-side navigation
-- Added fallback condition to prevent modal triggering unintended routes
-- Verified full responsiveness and cross-tab support
+- Added lucide-react icons (Mail, Lock, LogIn, LogOut) to input fields and buttons
+- Improved input UX with absolute-positioned icons and padded fields
+- Styled Login and Logout buttons with consistent spacing, rounded edges, and icon+text layout
+- Enhanced accessibility by using semantic elements and clearer feedback area
+- Preserved existing Supabase login/logout logic and redirection hook
 
-🔒 Safe to merge | 🧪 Tested on Chrome, Edge, Firefox (desktop & mobile)
+This update makes the login page more visually appealing, user-friendly, and ready for industry-level applications.
