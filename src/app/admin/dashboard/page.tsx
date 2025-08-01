@@ -27,6 +27,34 @@ export default function AdminDashboard() {
 
       {/* Activity Section */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* ✨ 1.Reservation Summary Chart */}
+        {/* Reservation Summary Chart (Placeholder) */}
+        <div className="bg-white p-6 rounded-lg shadow-md mt-8">
+          <h3 className="text-xl font-semibold mb-4 text-gray-700">Reservation Trends</h3>
+          <div className="h-40 flex items-center justify-center text-gray-400 italic">
+            {/* In future, replace with Recharts or Chart.js */}
+            [Chart Placeholder - Coming Soon]
+          </div>
+        </div>
+        {/* ✨ 2. Recent Feedback from Users */}
+        {/* Recent Feedback (Static Sample for now) */}
+        <div className="bg-white p-6 rounded-lg shadow-md mt-8">
+          <h3 className="text-xl font-semibold mb-4 text-gray-700">Recent User Feedback</h3>
+          <ul className="divide-y divide-gray-200">
+            {[
+              { user: 'Amit', feedback: 'Great experience booking the hall!' },
+              { user: 'Neha', feedback: 'Please add more photos to the venue listings.' },
+              { user: 'Raj', feedback: 'Payment was smooth and quick.' },
+            ].map((f, idx) => (
+              <li key={idx} className="py-2">
+                <p className="font-medium text-gray-800">{f.user}</p>
+                <p className="text-gray-600">{f.feedback}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+
         {/* Recent Users */}
         <div className="col-span-2 bg-white p-6 rounded-lg shadow-md">
           <h3 className="text-xl font-semibold mb-4 text-gray-700">Recent Activity</h3>
@@ -53,6 +81,20 @@ export default function AdminDashboard() {
           </ul>
         </div>
       </div>
+      {/* ✨ 3. Admin Profile Overview Section */}
+      {/* Admin Profile Overview */}
+      <div className="bg-white p-6 rounded-lg shadow-md mt-8 mb-16">
+        <h3 className="text-xl font-semibold mb-4 text-gray-700">Admin Profile</h3>
+        <div className="flex items-center space-x-4">
+          <img src="/admin-avatar.png" alt="Admin" className="w-16 h-16 rounded-full border" />
+          <div>
+            <p className="text-lg font-semibold text-gray-800">Admin Name</p>
+            <p className="text-sm text-gray-500">admin@example.com</p>
+            <p className="text-sm text-green-600 mt-1">Online</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
