@@ -54,6 +54,20 @@ export default function AdminDashboard() {
           </ul>
         </div>
 
+        {/* 3. */}
+        {/* Smart Insights / Admin Assistant Tool */}
+        <div className="mt-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-6 rounded-lg shadow-md text-white">
+          <h3 className="text-xl font-semibold mb-4">Smart Insights (AI Assistant)</h3>
+          <p className="mb-3">🤖 Based on current trends, you should consider:</p>
+          <ul className="list-disc pl-5 space-y-2 text-sm">
+            <li>Offering weekend discounts — high booking spikes seen on Fridays.</li>
+            <li>Sending follow-up surveys — user feedback response rate is 70%.</li>
+            <li>Automating approval for small reservations (under ₹2000).</li>
+          </ul>
+          <button className="mt-4 bg-white text-indigo-700 font-semibold px-4 py-2 rounded hover:bg-indigo-100 transition">
+            Generate Full Report
+          </button>
+        </div>
 
         {/* Recent Users */}
         <div className="col-span-2 bg-white p-6 rounded-lg shadow-md">
@@ -69,6 +83,8 @@ export default function AdminDashboard() {
             ))}
           </ul>
         </div>
+
+        
 
         {/* Quick Links / Actions */}
         <div className="bg-white p-6 rounded-lg shadow-md">
@@ -86,7 +102,7 @@ export default function AdminDashboard() {
       <div className="bg-white p-6 rounded-lg shadow-md mt-8 mb-16">
         <h3 className="text-xl font-semibold mb-4 text-gray-700">Admin Profile</h3>
         <div className="flex items-center space-x-4">
-          <img src="/admin-avatar.png" alt="Admin" className="w-16 h-16 rounded-full border" />
+          <img src="/AdminAvatar.jpeg" alt="Admin" className="w-16 h-16 rounded-full border" />
           <div>
             <p className="text-lg font-semibold text-gray-800">Admin Name</p>
             <p className="text-sm text-gray-500">admin@example.com</p>

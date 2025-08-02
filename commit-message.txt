@@ -1,9 +1,9 @@
-feat(auth): enhance login UI with icons, accessibility, and styling
+feat(dashboard): add new UI sections for reservation trends and user feedback
 
-- Added lucide-react icons (Mail, Lock, LogIn, LogOut) to input fields and buttons
-- Improved input UX with absolute-positioned icons and padded fields
-- Styled Login and Logout buttons with consistent spacing, rounded edges, and icon+text layout
-- Enhanced accessibility by using semantic elements and clearer feedback area
-- Preserved existing Supabase login/logout logic and redirection hook
+- Introduced a new "Reservation Trend" section showing current venue usage status (e.g. fully booked, moderate).
+- Added a "Recent Feedback" panel displaying user reviews/comments with names and star ratings.
+- Integrated a placeholder for a futuristic tool ("AI Reservation Optimizer") with animated loading for upcoming feature support.
+- Ensured visual consistency with Tailwind utility classes and responsive design.
+- Maintained structure parity with "Recent Activity" card and applied modular enhancements for future extensibility.
 
-This update makes the login page more visually appealing, user-friendly, and ready for industry-level applications.
+#ui #dashboard #tailwind #enhancement #futureReady
