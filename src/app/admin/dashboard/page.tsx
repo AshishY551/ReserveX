@@ -9,6 +9,10 @@
 //   return <div className="p-4"><h1>Admin Dashboard</h1><p>Welcome, Admin!</p></div>;
 // }
 
+// import image for icon
+import Image from 'next/image';
+
+
 import React from 'react';
 // ✅ Add Chart.js (or Recharts later)
 // At top (if using JS/TSX in React)
@@ -159,7 +163,7 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        
+
         {/* ✨ 2. Recent Feedback from Users */}
         {/* Recent Feedback (Static Sample for now) */}
         <div className="bg-white p-6 rounded-lg shadow-md mt-8">
@@ -226,7 +230,16 @@ export default function AdminDashboard() {
       <div className="bg-white p-6 rounded-lg shadow-md mt-8 mb-16">
         <h3 className="text-xl font-semibold mb-4 text-gray-700">Admin Profile</h3>
         <div className="flex items-center space-x-4">
-          <img src="/AdminAvatar.jpeg" alt="Admin" className="w-16 h-16 rounded-full border" />
+          {/* <img src="/Image/admin/AdminAvatar.jpeg" alt="Admin" className="w-16 h-16 rounded-full border" /> */}
+
+          {/* 2. ✅ Replace <img /> with Next.js <Image />: */}
+          <Image
+            src="/images/admin/AdminAvatar.jpeg"
+            alt="Admin"
+            width={64}
+            height={64}
+            className="w-16 h-16 rounded-full border"
+          />
           <div>
             <p className="text-lg font-semibold text-gray-800">Admin Name</p>
             <p className="text-sm text-gray-500">admin@example.com</p>

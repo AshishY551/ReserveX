@@ -1,12 +1,6 @@
-feat(dashboard): migrate Reservation Trends chart to client component with useRef and Line chart integration
+fix(admin-profile): corrected image path and added required width/height to Next.js Image component
 
-- Added 'use client' directive at the top of the ReservationTrendsChart component file to enable usage of React Client Hooks like useRef (fixes Next.js Runtime Error: "useRef only works in Client Components").
-- Implemented chart rendering using Chart.js Line chart (`react-chartjs-2`) with updated responsive configuration.
-- Enhanced `chartOptions` with modern UX styling:
-  - Custom legend position and label styling using Tailwind-inspired colors (#4B5563, #9CA3AF, etc.).
-  - Grid and tick colors for improved contrast and dashboard aesthetics.
-- Confirmed the `useRef()` functionality now works within the client component, preventing server-side rendering violations.
-- Improved chart container with shadow, padding, rounded edges for polished look.
-- Set up the component for future expansion: dynamic data input via props or API.
-
-💡 This change ensures chart interactivity is properly handled on the client, and the component is future-proof for advanced dashboard analytics.
+- Moved AdminAvatar.jpeg to the /public/Image/admin/ directory for proper access in Next.js App Router.
+- Replaced <img> tag with Next.js <Image> component to leverage image optimization features.
+- Added required `width` and `height` props to resolve runtime error in Next.js 15.
+- Ensured admin profile avatar loads correctly and maintains expected rounded UI styling.
