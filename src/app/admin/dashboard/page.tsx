@@ -4,6 +4,115 @@
 // }
 
 import React from 'react';
+// ✅ Add Chart.js (or Recharts later)
+// At top (if using JS/TSX in React)
+// ----------------------------------------------------
+import { Line } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  LineElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+
+// ✅ Fix for TypeScript error on options={chartOptions}
+// You need to ex
+// ✅ Updated Import 
+import type { ChartOptions } from 'chart.js';
+
+
+// ✅ Add Chart.js (or Recharts later)
+// Register components for Chart.js
+ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend);
+
+// ✅ Add Chart.js (or Recharts later)
+// Mock data (to be replaced with real-time DB data later)
+const chartData = {
+  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+  datasets: [
+    {
+      label: 'Total Reservations',
+      data: [5, 8, 6, 12, 9, 15, 10],
+      fill: false,
+      backgroundColor: '#6366f1',
+      borderColor: '#6366f1',
+      tension: 0.4,
+    },
+  ],
+};
+
+// ✅ Add Chart.js (or Recharts later)
+const chartOptions: ChartOptions<'line'> = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top',
+      labels: {
+        color: '#4B5563',
+        font: {
+          weight: '600',
+        },
+      },
+    },
+    title: {
+      display: true,
+      text: 'Reservation Trends',
+      color: '#111827',
+      font: {
+        size: 16,
+        weight: 'bold',
+      },
+    },
+    tooltip: {
+      mode: 'index',
+      intersect: false,
+    },
+  },
+  interaction: {
+    mode: 'nearest',
+    axis: 'x',
+    intersect: false,
+  },
+  scales: {
+    x: {
+      title: {
+        display: true,
+        text: 'Dates',
+        color: '#6B7280',
+        font: {
+          weight: '600',
+        },
+      },
+      ticks: {
+        color: '#9CA3AF',
+      },
+      grid: {
+        color: '#E5E7EB',
+      },
+    },
+    y: {
+      title: {
+        display: true,
+        text: 'Bookings',
+        color: '#6B7280',
+        font: {
+          weight: '600',
+        },
+      },
+      ticks: {
+        color: '#9CA3AF',
+      },
+      grid: {
+        color: '#E5E7EB',
+      },
+    },
+  },
+};
+// -------------------------------------------------------------------
+
 
 export default function AdminDashboard() {
   return (
@@ -34,6 +143,21 @@ export default function AdminDashboard() {
           <div className="h-40 flex items-center justify-center text-gray-400 italic">
             {/* In future, replace with Recharts or Chart.js */}
             [Chart Placeholder - Coming Soon]
+          </div>
+        </div>
+
+
+        {/* // In JSX */}
+        <div className="bg-white p-6 rounded-lg shadow-md mt-8">
+          <h3 className="text-xl font-semibold mb-4 text-gray-700 flex items-center gap-2">
+            📈 Reservation Trends
+            <span className="text-sm bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full animate-pulse">AI Insights Beta</span>
+          </h3>
+          <div className="h-64">
+            <Line data={chartData} options={chartOptions} />
+          </div>
+          <div className="text-sm text-gray-500 italic mt-2">
+            Predictive trend based on past 7 days’ user behavior. More AI-powered insights coming soon.
           </div>
         </div>
         {/* ✨ 2. Recent Feedback from Users */}

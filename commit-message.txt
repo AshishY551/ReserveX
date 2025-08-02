@@ -1,9 +1,7 @@
-feat(dashboard): add new UI sections for reservation trends and user feedback
+feat(dashboard): upgrade Reservation Trends chart with full Chart.js config and typings
 
-- Introduced a new "Reservation Trend" section showing current venue usage status (e.g. fully booked, moderate).
-- Added a "Recent Feedback" panel displaying user reviews/comments with names and star ratings.
-- Integrated a placeholder for a futuristic tool ("AI Reservation Optimizer") with animated loading for upcoming feature support.
-- Ensured visual consistency with Tailwind utility classes and responsive design.
-- Maintained structure parity with "Recent Activity" card and applied modular enhancements for future extensibility.
+- Replaced placeholder with interactive Line chart using react-chartjs-2
+- Added ChartOptions<'line'> with full type safety to remove TypeScript warnings
+- Included advanced features: axis labels, grid styling, tooltip behavior, and responsive legend
+- Future-ready configuration supporting enhanced UX and scalability
 
-#ui #dashboard #tailwind #enhancement #futureReady
