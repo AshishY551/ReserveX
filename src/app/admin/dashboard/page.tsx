@@ -1,3 +1,9 @@
+'use client';
+// ✅ Solution: Convert to a Client Component
+// At the top of your .tsx file, add this line:
+// 'use client';
+// This tells Next.js to treat the entire file as a Client Component, allowing usage of hooks like useRef, useEffect, useState, etc.
+// --------------------------------------------
 // import React from 'react';
 // export default function AdminDashboard() {
 //   return <div className="p-4"><h1>Admin Dashboard</h1><p>Welcome, Admin!</p></div>;
@@ -53,7 +59,8 @@ const chartOptions: ChartOptions<'line'> = {
       labels: {
         color: '#4B5563',
         font: {
-          weight: '600',
+          // weight: '600' as const, // or just '600' as a string--- error
+          weight: 'bold',
         },
       },
     },
@@ -83,7 +90,7 @@ const chartOptions: ChartOptions<'line'> = {
         text: 'Dates',
         color: '#6B7280',
         font: {
-          weight: '600',
+          weight: 'bold',
         },
       },
       ticks: {
@@ -99,7 +106,7 @@ const chartOptions: ChartOptions<'line'> = {
         text: 'Bookings',
         color: '#6B7280',
         font: {
-          weight: '600',
+          weight: 'bold',
         },
       },
       ticks: {
@@ -138,15 +145,6 @@ export default function AdminDashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* ✨ 1.Reservation Summary Chart */}
         {/* Reservation Summary Chart (Placeholder) */}
-        <div className="bg-white p-6 rounded-lg shadow-md mt-8">
-          <h3 className="text-xl font-semibold mb-4 text-gray-700">Reservation Trends</h3>
-          <div className="h-40 flex items-center justify-center text-gray-400 italic">
-            {/* In future, replace with Recharts or Chart.js */}
-            [Chart Placeholder - Coming Soon]
-          </div>
-        </div>
-
-
         {/* // In JSX */}
         <div className="bg-white p-6 rounded-lg shadow-md mt-8">
           <h3 className="text-xl font-semibold mb-4 text-gray-700 flex items-center gap-2">
@@ -160,6 +158,8 @@ export default function AdminDashboard() {
             Predictive trend based on past 7 days’ user behavior. More AI-powered insights coming soon.
           </div>
         </div>
+
+        
         {/* ✨ 2. Recent Feedback from Users */}
         {/* Recent Feedback (Static Sample for now) */}
         <div className="bg-white p-6 rounded-lg shadow-md mt-8">
